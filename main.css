@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap');
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+:root {
+    --columnNr: 3;
+    --maintext: 3rem;
+}
+@media(min-width: 500px){
+    :root {--maintext: 5rem;}
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.game-container {
+    max-width: calc(var(--cell-size)*6);
+    min-width: 320px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.918);
+    position: relative;
+    background: rgb(253,187,45);
+    background: -moz-radial-gradient(circle, rgba(253,187,45,1) 0%, rgba(253,187,45,1) 25%, rgba(34,193,195,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(253,187,45,1) 0%, rgba(253,187,45,1) 25%, rgba(34,193,195,1) 100%);
+    background: radial-gradient(circle, rgba(253,187,45,1) 0%, rgba(253,187,45,1) 25%, rgba(34,193,195,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fdbb2d",endColorstr="#22c1c3",GradientType=1);
+}
+.game-container .btn{
+    font-size: 1.2rem;
+    padding: 7px;
+    border-radius: 10px;
+    border: 1px solid black;
+    outline: none;  
+}
+.game-container .btn span#difficulity {
+    font-size: 1rem;
+}
+.game-container .btn#restart-btn,
+.game-container .controls #difficulity-btn,
+.game-container .controls #opponent-btn {
+    background: #fdbb2d;
+    margin-top: 20px;
+}
+.game-container .title{
+    width: 100%;
+    padding: 20px;
+    font-size: 3rem;
+    text-align: center; 
+    border-bottom: 2px dotted rgb(76, 105, 38);
+}
+.game-container .main {
+    margin: 20px;
+    box-shadow: 0 0  20px rgba(0, 0, 0, 0.918);
+}
+.game-container .controls {
+    min-width: var(--cell-size);
+    min-height: calc(var(--cell-size)*.5); 
+    max-height: calc(var(--cell-size) *2);
+    display: flex;
+    justify-content: start;
+    flex-flow: column wrap;
+
+}
+
+.game-container .standings {
+    min-width: var(--cell-size);  
+    min-height: calc(var(--cell-size) *.7);
+    max-height: calc(var(--cell-size) *2);
+    text-align: center;
+    line-height: 2.5rem;
+    font-size: 1.6rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media(max-width: 800px){
+    .game-container .controls{
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .game-container .controls .btn {
+        margin: 20px 10px;
+        flex-grow: 1;
+        flex-basis: 0;
+    }
+    .game-container .standings {
+        width: 100%;
+        grid-template-columns: repeat(var(--columnNr), 1fr);
+        grid-template-rows: 1fr;
+        border-top: 2px dotted rgb(76, 105, 38);
+    }
+    .game-container .standings span {
+        display: block;
+    }
+}
+@media(max-width:376px){
+    .game-container .controls .btn {
+        margin: 20px 3px;
+    }
+}
+.modal {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.modal #modal-text {
+    margin-bottom: 20px;
+    font-size: var(--maintext);
+    color: white;
+    animation: zoom 1.5s;
+}
+.modal #modal-text:hover {
+    color: #fdbb2d;
+    cursor: pointer;
+}
+.modal #contunue-btn {
+    background-color: #22c1c3
+}
+@keyframes zoom {
+    from {font-size: 0.1rem }
+    to {font-size: var(--maintext)}
+}
+.hide {
+    display: none;
+}

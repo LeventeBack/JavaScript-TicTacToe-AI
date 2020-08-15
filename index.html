@@ -1,0 +1,72 @@
+<!-- Back István Levente - 2020-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="img/icon.svg">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <div class="game-container">
+        <div class="title">
+            <!--<button id="back-btn" class="btn">Back</button>-->
+            <span id="title-span">Tic Tac Toe</span>
+        </div>
+        <div class="controls">  
+            <button id="restart-btn" class="btn">Restart<br>Game</button>
+            <button id="opponent-btn" class="btn">Change to<br><span id="opponent">1vs1</span></button>
+            <button id="difficulity-btn" class="btn">Difficulity<br>(<span id="difficulity">EASY</span>)</button>
+        </div>
+        <div class="board main">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div> 
+        <div id='type-bot' class="standings">
+                <div class="wins">
+                    Wins:
+                    <span class="wins-text">0</span>
+                </div>
+                <div class="draws">
+                    Draws:
+                    <span class="draws-text">0</span>
+                </div>
+                <div class="losses">
+                    Losses:
+                <span class="losses-text">0</span>
+                </div>
+        </div>
+        <div id='type-vs' class="hide">
+            <div class="p1">
+                Player(X):
+                <div class="p1-text">0</div>
+            </div>
+            <div class="vs-draw">
+                Draws:
+                <div class="vs-draw-text">0</div>
+            </div>
+            <div class="p2">
+                Player(O):
+                <div class="p2-text">0</div>
+            </div>
+        </div>
+
+        <div class="modal">
+            <span id="modal-text">Start Game</span> 
+            <button id="contunue-btn" class="btn hide">Continue</button>
+
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
